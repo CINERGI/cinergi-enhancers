@@ -4,16 +4,15 @@ Document Ingestion Management
 An application with a REST interface for document metadata and document ingestion can be used to manage document ingestion in a systematic way. 
 As used by Elasticsearch and Solr a  REST web service based interface would allow flexible data management at ingestion level. 
 Documents in XML, CSV or JSON formats  can be ingested through the REST API. 
-The Document Ingestion Management System (DIMS) is responsible to transform the original document to JSON (if not already in JSON) , validate it, 
+The Foundry is responsible to transform the original document to JSON (if not already in JSON) , validate it, 
 wrap it with standard document components such as processing, provenance etc 
 and persist to MongoDB. 
-For each source, first source meta-data needs to be ingested via the REST interface. 
 
 ## Source Metadata
 
 The object model of the Source metadata is defined in `common` subproject 
-`org.neuinfo.foundry.common.model.Source` class. The 
-class also allows conversion to or from JSON format and has a Builder 
+`org.neuinfo.foundry.common.model.Source` class. 
+The class also allows conversion to or from JSON format and has a Builder 
 to build `Source` objects. 
 Below is the JSON representation of the source metadata in MongoDB [Burak's original JSON object]
 

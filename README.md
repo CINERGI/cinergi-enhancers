@@ -38,6 +38,12 @@ Then build and install via
 
     mvn -Pdev clean install
 
+Building
+--------
+
+    cd $HOME/cinergi-enhancers
+    mvn clean install
+
 
 # Implementing a new Enhancer
 
