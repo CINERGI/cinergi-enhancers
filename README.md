@@ -74,7 +74,7 @@ public interface IPlugin {
 ```
 
 The enhancement is done in the `handle(DBObject docWrapper)` method which takes a Mongo `DBObject` 
-object corresponding to the currently processed [document wrapper](doc_ingestion.md) from the Mongo database. 
+object corresponding to the currently processed [document wrapper](doc/doc_ingestion.md) from the Mongo database. 
 The original document is stored inline in the document wrapper. 
 Below is a code fragment to get the original document converted to JSON from the `docWrapper`.
 
@@ -115,6 +115,6 @@ return r;
 
 To get more information about writing new enhancers, please check to code of the existing enhancers under the 
 package `org.neuinfo.foundry.consumers.jms.consumers.plugins` namely 
-`KeywordEnhancer`, `SpatialEnhancer`, `OrganizationEnhancer` and `WAFExporter`.
+`KeywordEnhancer2`, `SpatialEnhancer2`, `OrganizationEnhancer2` and `WAFExporter`.
 
 
