@@ -23,20 +23,20 @@ Installing Foundry
 
 Enhancer plugin API and Foundry common library used for enhancer development is required for the enhancement development. To get the latest jar files for these libraries you need to clone the Foundry code and build and install these libraries to your local Maven repository.
 
-   cd $HOME
-   git clone https://<username>@github.com/CINERGI/Foundry
-   cd $HOME/Foundry/dependencies
-   ./install_prov_xml_2mvn.sh
-   ./install_prov_model_2mvn.sh
-   ./install_prov_json__2mvn.sh
-   ./install_bnlp_2mvn.sh
-   ./install_bnlp_dependencies_2mvn.sh
-   ./install_bnlp_model2mvn.sh
-   cd $HOME/Foundry
+    cd $HOME
+    git clone https://<username>@github.com/CINERGI/Foundry
+    cd $HOME/Foundry/dependencies
+    ./install_prov_xml_2mvn.sh
+    ./install_prov_model_2mvn.sh
+    ./install_prov_json__2mvn.sh
+    ./install_bnlp_2mvn.sh
+    ./install_bnlp_dependencies_2mvn.sh
+    ./install_bnlp_model2mvn.sh
+    cd $HOME/Foundry
 
 Then build and install via
 
-   mvn -Pdev clean install
+    mvn -Pdev clean install
 
 
 # Implementing a new Enhancer
