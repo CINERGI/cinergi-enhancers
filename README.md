@@ -50,7 +50,8 @@ Building
 All enhancers need to implement the `org.neuinfo.foundry.consumers.plugin.IPlugin` interface which is located 
 in the `consumer-plugin-api` subproject of the Foundry-ES. To develop a new enhancer, you need to include 
 the Foundry-ES `common` and `consumer-plugin-api` libraries to your Maven `pom.xml` after you have built it 
-via `mvn -Pdev clean install` in addition to all the dependencies from `common/pom.xml` of the Foundry-ES.
+via `mvn -Pdev clean install` in addition to all the dependencies from `common/pom.xml` of the Foundry-ES. The Maven build file (`pom.xml`) of the 
+starter project contains all of this already.
 
 ```xml
 <dependency>
@@ -122,5 +123,38 @@ return r;
 To get more information about writing new enhancers, please check to code of the existing enhancers under the 
 package `org.neuinfo.foundry.consumers.jms.consumers.plugins` namely 
 `KeywordEnhancer2`, `SpatialEnhancer2`, `OrganizationEnhancer2` and `WAFExporter`.
+
+# Deploying enhancers
+
+Once developed and tested, the enhancer(s) needs to be deployed to the Foundry system. The consumer coordinator/head component of Foundry that manages the lifecycle of the enhancers dynamically loads external enhancers from a prespecified plugins directory. The plugin directory is specified in the meta configuration file (See $HOME/Foundry/bin/config-spec.yml.example for an example) using the `pluginDir` parameter. 
+You need first build a jar file of your enhancer(s) and copy it to the `pluginDir` location. 
+
+    cd $HOME/cinergi-enhancers
+    mvn clean install
+    cp $HOME/cinergi-enhancers/target/cinergi-enhancers-1.0-SNAPSHOT.jar <pluginDir>
+
+Any additional libraries you have used (i.e. any new dependencies added to the `pom.xml` file and their dependencies) needs to be added to the plugin library which is determined from the `pluginDir`. For example for plugin directory `/var/data/foundry/consumer_plugins/plugins`, the corresponding external library directory is `/var/data/foundry/consumer_plugins/lib`.
+
+After that, Foundry meta configuration file (See `$HOME/Foundry/bin/config-spec.yml.example` for an example) needs to be update to add the enhancer(s) to the 
+workflow ans consumers section of the meta configuration file. 
+
+In the consumers section add a new entry for each enhancer specifiying the full class name of the enhancer and an output status the system will be in after the enhancement in the workflow. For example
+
+```YAML
+    - org:
+       class: "org.neuinfo.foundry.consumers.jms.consumers.plugins.OrganizationEnhancer2"
+       status: org_enhanced
+
+```
+Any enhancer specific parameters can be specified as name value pairs in the entry after status.
+
+Also add the alias you have given to your enhance (org in the above example) to the `workflow` section of the meta configuration file.
+
+
+    
+
+
+
+
 
 
