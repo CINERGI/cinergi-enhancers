@@ -151,7 +151,7 @@ In the consumers section add a new entry for each enhancer specifiying the full 
 
 ```YAML
     - org:
-       class: "org.neuinfo.foundry.consumers.jms.consumers.plugins.OrganizationEnhancer2"
+       class: "org.neuinfo.foundry.enhancers.plugins.OrganizationEnhancer"
        status: org_enhanced
 
 ```
