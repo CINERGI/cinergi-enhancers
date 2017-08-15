@@ -45,6 +45,15 @@ Building
     mvn clean install
 
 
+Testing the provided Organization Enhancer
+------------------------------------------
+
+    cd $HOME/cinergi-enhancers
+    mvn test -DskipTests=false
+
+The starter project contains a single enhancer implementation, namely `OrganizationEnhancer` in the `$HOME/cinergi-enhancers/src/main/java/org/neuinfo/foundry/enhancers/plugins` directory.
+The corresponding integration test that does not depend on the MongoDB for ease of testing is located at `$HOME/cinergi-enhancers/src/test/java/org/neuinfo/foundry/enhancers/OrganizationEnhancerTest.java`.
+
 # Implementing a new Enhancer
 
 All enhancers need to implement the `org.neuinfo.foundry.consumers.plugin.IPlugin` interface which is located 

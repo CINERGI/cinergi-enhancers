@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * Created by bozyurt on 8/10/17.
  */
-public class OrganizationEnhancerTests {
+public class OrganizationEnhancerTest {
 
     @Test
     public void testOrganizationEnhancer() throws Exception {
@@ -43,7 +43,7 @@ public class OrganizationEnhancerTests {
     }
 
     public static String loadAsStringFromClassPath(String classpath) throws Exception {
-        URL url = OrganizationEnhancerTests.class.getClassLoader().getResource(classpath);
+        URL url = OrganizationEnhancerTest.class.getClassLoader().getResource(classpath);
         String path = url.toURI().getPath();
         return Utils.loadAsString(path);
     }
