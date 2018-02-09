@@ -42,7 +42,7 @@
       }}}},
       "gmd:identificationInfo": {"gmd:MD_DataIdentification": {
         "gmd:citation": {"gmd:CI_Citation": {
-          "gmd:title": {"gco:CharacterString": {"_$": "Seismic Shot Point Navigation Data from the Long Island Shelf acquired during the R/V Endeavor expedition EN370 (2002)"}},
+          "gmd:title": {"gco:CharacterString": {"_$": "Seismic Shot Point Navigation Data from the Long Island Shelf acquired during the R/V Endeavor expedition EN370 (2002) "}},
           "gmd:date": {"gmd:CI_Date": {
             "gmd:date": {"gco:Date": {"_$": "2009-05-12"}},
             "gmd:dateType": {"gmd:CI_DateTypeCode": {
@@ -56,7 +56,7 @@
             {"gmd:MD_Identifier": {"gmd:code": {"gco:CharacterString": {"_$": "10000"}}}}
           ]
         }},
-        "gmd:abstract": {"gco:CharacterString": {"_$": "This data set was acquired with the LDEO Portable HiRes Multi-Channel Seismic system during Endeavor expedition R/V EN370 conducted in 2002 (Chief Scientist: Dr. Gregory Mountain; Investigators: Dr. Gregory Mountain, Dr. Cecilia McHugh, and Dr. Nicholas Christie-Blick). These data files are of ASCII format and include Seismic Shot Point Navigation data that provide the primary seismic navigation source for this cruise. Data were acquired as part of the project: Hi-Res MCS, CHIRP and side-scan sonar study of NY/NJ margins, and funding was provided by NSF grants: OCE01-19019 and OCE02-24767. These data are cited by McHugh et al., 2010."}},
+        "gmd:abstract": {"gco:CharacterString": {"_$": "This data set was acquired with the LDEO Portable HiRes Multi-Channel Seismic system during Endeavor expedition R/V EN370 conducted in 2002 (Chief Scientist: Dr. Gregory Mountain; Investigators: Dr. Gregory Mountain, Dr. Cecilia McHugh, and Dr. Nicholas Christie-Blick). These data files are of ASCII format and include Seismic Shot Point Navigation data that provide the primary seismic navigation source for this cruise. Data were acquired as part of the project: Hi-Res MCS, CHIRP and side-scan sonar study of NY/NJ margins, and funding was provided by NSF grants: OCE01-19019 and OCE02-24767. Test: Data are from 2000 to 2001. and January 1999 to December 1999"}},
         "gmd:pointOfContact": [
           {"gmd:CI_ResponsibleParty": {
             "gmd:individualName": {"gco:CharacterString": {"_$": "MGDS Data Manager"}},

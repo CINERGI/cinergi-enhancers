@@ -41,4 +41,24 @@ public class EnhancerUtils {
             provData.addModifiedFieldProv(sb.toString().trim());
         }
     }
+
+    public static void prepTemporalProv( List<Temporal> temporalList, ProvenanceHelper.ProvData provData) {
+        if (temporalList == null || temporalList.isEmpty()) {
+            provData.addModifiedFieldProv("No dates are added");
+            return;
+        }
+
+            StringBuilder sb = new StringBuilder(128);
+            sb.append("Added dates ");
+            for (Iterator<Temporal> iter = temporalList.iterator(); iter.hasNext(); ) {
+                Temporal kwi = iter.next();
+                sb.append(kwi.getIsoString());
+                if (iter.hasNext()) {
+                    sb.append(',');
+                }
+            }
+            //sb.append(" for category ").append(aDate);
+            provData.addModifiedFieldProv(sb.toString().trim());
+
+    }
 }

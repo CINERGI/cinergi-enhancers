@@ -10,27 +10,29 @@ import org.neuinfo.foundry.common.util.JSONUtils;
 import org.neuinfo.foundry.consumers.plugin.IPlugin;
 import org.neuinfo.foundry.consumers.plugin.Result;
 import org.neuinfo.foundry.enhancers.common.ProvenanceHelper;
+import org.neuinfo.foundry.enhancers.common.TemporalNLP;
 import org.neuinfo.foundry.enhancers.common.Temporal;
-
+import org.neuinfo.foundry.enhancers.common.EnhancerUtils;
 import java.util.*;
 
 /**
- * Created by bozyurt on 4/27/16.
+ * Created by valentine 2018-01-09.
  */
 public class TemporalEnhancer implements IPlugin {
-    private Temporal temporal;
+    private TemporalNLP temporalNLP;
 
     private final static Logger logger = Logger.getLogger(TemporalEnhancer.class);
 
     @Override
     public void initialize(Map<String, String> options) throws Exception {
-        this.temporal = new Temporal();
+        this.temporalNLP = new TemporalNLP();
     }
 
     @Override
     public Result handle(DBObject docWrapper) {
         try {
-            Set<String> organizationSet = new HashSet<String>();
+            List<Temporal> dates = new ArrayList<Temporal>();
+
             List<String>textStrings = new ArrayList<String>(10);
             String title;
             DBObject originalDoc = (DBObject) docWrapper.get("OriginalDoc");
@@ -51,15 +53,15 @@ public class TemporalEnhancer implements IPlugin {
                     textStrings.add(o.toString());
                 }
             }
-             objects = jpp.find("$..'gmd:purpose'.'gco:CharacterString'.'_$'", json);
+            objects = jpp.find("$..'gmd:purpose'.'gco:CharacterString'.'_$'", json);
             if (objects != null) {
                 for (Object o : objects) {
                     textStrings.add(o.toString());
                 }
             }
-            ArrayList<String> dates = new ArrayList<String>();
+
             for (String s : textStrings){
-                ArrayList<String> dateResult =  Temporal.getdates(s, temporal.getCoreNLP());
+                List<Temporal> dateResult =  this.temporalNLP.getDates(s);
                 if (dateResult != null ) {
                     dates.addAll(dateResult);
                 }
@@ -67,23 +69,28 @@ public class TemporalEnhancer implements IPlugin {
 
 
             JSONArray jsArr = new JSONArray();
-            for (String org : dates) {
-                TemporalDate td = new TemporalDate();
-                td.start = org;
-                JSONObject js = new JSONObject();
-                js.put("date", td.start);
-                jsArr.put(td);
+            for (Temporal temporal : dates) {
+                //TemporalDate td = new TemporalDate();
+               // td.start = temporal.getStartDate().toString();
+                //td.name = temporal.getName();
+                //JSONObject js = new JSONObject(temporal, new String[] {"Name","StartDate"});
+                JSONObject js = new JSONObject(temporal);
+                //js.put("date", td.start);
+                //js.put("date", td.start);
+                jsArr.put(js);
+
             }
 
             if (jsArr.length() > 0) {
                 DBObject data = (DBObject) docWrapper.get("Data");
-                data.put("temporal", JSONUtils.encode(jsArr));
+                data.put("temporalNLP", JSONUtils.encode(jsArr));
                 ProvenanceHelper.ProvData provData = new ProvenanceHelper.ProvData(primaryKey, ProvenanceHelper.ModificationType.Added);
-                Map<String, List<TemporalDate>> category2KWIListMap = new HashMap<String, List<TemporalDate>>(7);
+
 
 
                 provData.setSourceName(sourceName).setSrcId(srcId);
-                //EnhancerUtils.prepKeywordsProv(category2KWIListMap, provData);
+                EnhancerUtils.prepTemporalProv(dates, provData);
+                provData.addModifiedFieldProv("Temporal Enhancer");
                 ProvenanceHelper.saveEnhancerProvenance("temporalEnhancer", provData, docWrapper);
                 return new Result(docWrapper, Result.Status.OK_WITH_CHANGE);
             } else {
@@ -106,5 +113,6 @@ public class TemporalEnhancer implements IPlugin {
         String start ;
         String end;
         String type;
+        String name;
     }
 }

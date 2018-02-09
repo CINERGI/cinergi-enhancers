@@ -3,6 +3,7 @@ package org.neuinfo.foundry.enhancers;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import org.json.JSONObject;
+import org.json.JSONArray;
 import org.junit.Assert;
 import org.junit.Test;
 //import org.junit.jupiter.api.DisplayName;
@@ -28,8 +29,8 @@ import java.util.Map;
 /**
  * Created by valentine 12-2017.
  */
-//@DisplayName("Temporal Enhancer. Dates from Text")
-public class TemporalEnhancerTest {
+//@DisplayName("TemporalNLP Enhancer. Dates from Text")
+public class TemporalNLPEnhancerTest {
 
     @Test
 
@@ -48,14 +49,19 @@ public class TemporalEnhancerTest {
         Assert.assertNotNull(result);
         Assert.assertTrue(result.getStatus() == Result.Status.OK_WITH_CHANGE);
 
+
+
         // show the updated doc wrapper
         JSONObject updatedJson = JSONUtils.toJSON((BasicDBObject) result.getDocWrapper(), false);
+        JSONObject data = updatedJson.getJSONObject("Data");
+        JSONArray temporal = data.getJSONArray("temporalNLP");
+
         System.out.println(updatedJson.toString(2));
 
     }
 
     public static String loadAsStringFromClassPath(String classpath) throws Exception {
-        URL url = TemporalEnhancerTest.class.getClassLoader().getResource(classpath);
+        URL url = TemporalNLPEnhancerTest.class.getClassLoader().getResource(classpath);
         String path = url.toURI().getPath();
         return Utils.loadAsString(path);
     }
