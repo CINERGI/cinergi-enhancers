@@ -1,0 +1,616 @@
+{
+  "_id": {"$oid": "57630ca7cb740919e70ea5b5"},
+  "primaryKey": "org.marine-geo:metadata:10000",
+  "Version": 1,
+  "CrawlDate": "2016-06-16T13:31:35.073-07:00",
+  "OriginalDoc": {
+    "gmi:MI_Metadata": {
+      "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmi http://ngdc.noaa.gov/metadata/published/xsd/schema.xsd",
+      "gmd:fileIdentifier": {"gco:CharacterString": {"_$": "org.marine-geo:metadata:10000"}},
+      "gmd:language": {"gco:CharacterString": {"_$": "eng"}},
+      "gmd:hierarchyLevel": {"gmd:MD_ScopeCode": {
+        "@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode",
+        "@codeListValue": "series",
+        "_$": "series"
+      }},
+      "gmd:contact": {"gmd:CI_ResponsibleParty": {
+        "gmd:individualName": {"gco:CharacterString": {"_$": "MGDS Data Manager"}},
+        "gmd:organisationName": {"gco:CharacterString": {"_$": "Interdisciplinary Earth Data Alliance (IEDA):Marine Geoscience Data System (MGDS)"}},
+        "gmd:contactInfo": {"gmd:CI_Contact": {"gmd:address": {"gmd:CI_Address": {"gmd:electronicMailAddress": {"gco:CharacterString": {"_$": "info@marine-geo.org"}}}}}},
+        "gmd:role": {"gmd:CI_RoleCode": {
+          "@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode",
+          "@codeListValue": "pointofContact",
+          "_$": "pointOfContact"
+        }}
+      }},
+      "gmd:dateStamp": {"gco:Date": {"_$": "2016-04-01"}},
+      "gmd:metadataStandardName": {"gco:CharacterString": {"_$": "ISO 19115-2 Geographic Information - Metadata - Part 2: Extensions for Imagery and Gridded Data"}},
+      "gmd:metadataStandardVersion": {"gco:CharacterString": {"_$": "ISO 19115-2:2009(E)"}},
+      "gmd:referenceSystemInfo": {"gmd:MD_ReferenceSystem": {"gmd:referenceSystemIdentifier": {"gmd:RS_Identifier": {
+        "gmd:authority": {"gmd:CI_Citation": {
+          "gmd:title": {"gco:CharacterString": {"_$": "European Petroleum Survey Group (EPSG) Geodetic Parameter Registry"}},
+          "gmd:date": {"gmd:CI_Date": {
+            "gmd:date": {"gco:Date": {"_$": "2008-11-12"}},
+            "gmd:dateType": {"gmd:CI_DateTypeCode": {
+              "@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+              "@codeListValue": "publication",
+              "_$": "publication"
+            }}
+          }}
+        }},
+        "gmd:code": {"gco:CharacterString": {"_$": "NotProvided"}}
+      }}}},
+      "gmd:identificationInfo": {"gmd:MD_DataIdentification": {
+        "gmd:citation": {"gmd:CI_Citation": {
+          "gmd:title": {"gco:CharacterString": {"_$": "Road"}},
+          "gmd:date": {"gmd:CI_Date": {
+            "gmd:date": {"gco:Date": {"_$": "2009-05-12"}},
+            "gmd:dateType": {"gmd:CI_DateTypeCode": {
+              "@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode",
+              "@codeListValue": "publication",
+              "_$": "publication"
+            }}
+          }},
+          "gmd:identifier": [
+            {"gmd:MD_Identifier": {"gmd:code": {"gco:CharacterString": {"_$": "10.1594/IEDA/310000"}}}},
+            {"gmd:MD_Identifier": {"gmd:code": {"gco:CharacterString": {"_$": "10000"}}}}
+          ]
+        }},
+        "gmd:abstract": {"gco:CharacterString": {"_$": "This data set was acquired with the LDEO Portable HiRes Multi-Channel Seismic system during Endeavor expedition R/V EN370 conducted in 2002 (Chief Scientist: Dr. Gregory Mountain; Investigators: Dr. Gregory Mountain, Dr. Cecilia McHugh, and Dr. Nicholas Christie-Blick). These data files are of ASCII format and include Seismic Shot Point Navigation data that provide the primary seismic navigation source for this cruise. Data were acquired as part of the project: Hi-Res MCS, CHIRP and side-scan sonar study of NY/NJ margins, and funding was provided by NSF grants: OCE01-19019 and OCE02-24767. These data are cited by McHugh et al., 2010."}},
+        "gmd:pointOfContact": [
+          {"gmd:CI_ResponsibleParty": {
+            "gmd:individualName": {"gco:CharacterString": {"_$": "MGDS Data Manager"}},
+            "gmd:organisationName": {"gco:CharacterString": {"_$": "Interdisciplinary Earth Data Alliance (IEDA):Marine Geoscience Data System (MGDS)"}},
+            "gmd:contactInfo": {"gmd:CI_Contact": {"gmd:address": {"gmd:CI_Address": {"gmd:electronicMailAddress": {"gco:CharacterString": {"_$": "info@marine-geo.org"}}}}}},
+            "gmd:role": {"gmd:CI_RoleCode": {
+              "@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode",
+              "@codeListValue": "pointOfContact",
+              "_$": "pointOfContact"
+            }}
+          }},
+          {"gmd:CI_ResponsibleParty": {
+            "gmd:individualName": {"gco:CharacterString": {"_$": "Mountain, Gregory"}},
+            "gmd:organisationName": {"gco:CharacterString": {"_$": "Lamont-Doherty Earth Observatory (LDEO)"}},
+            "gmd:role": {"gmd:CI_RoleCode": {
+              "@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode",
+              "@codeListValue": "pointofContact",
+              "_$": "principleInvestigator"
+            }}
+          }}
+        ],
+        "gmd:descriptiveKeywords": [
+          {"gmd:MD_Keywords": {
+            "gmd:keyword": [
+              {"gco:CharacterString": {"_$": "Array"}},
+              {"gco:CharacterString": {"_$": "Endeavor"}}
+            ],
+            "gmd:type": {"gmd:MD_KeywordTypeCode": {
+              "@codeListValue": "platform",
+              "@codeList": "http://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode",
+              "_$": "platform"
+            }},
+            "gmd:thesaurusName": {"gmd:CI_Citation": {
+              "gmd:title": {"gco:CharacterString": {"_$": "MGDS Platform vocabulary"}},
+              "gmd:date": {"@gco:nilReason": "unknown"},
+              "gmd:identifier": {"gmd:MD_Identifier": {"gmd:code": {"gco:CharacterString": {"_$": "http://www.marine-geo.org/services/VocabServer?id=platform_id&fmt=xml"}}}}
+            }}
+          }},
+          {"gmd:MD_Keywords": {
+            "gmd:keyword": [
+              {"gco:CharacterString": {"_$": "Seismic:MCS:HiRes:Portable"}},
+              {"gco:CharacterString": {"_$": "Lamont-Doherty Earth Observatory (LDEO)"}},
+              {"gco:CharacterString": {"_$": "Seismic:Navigation:ShotTime"}}
+            ],
+            "gmd:type": {"gmd:MD_KeywordTypeCode": {
+              "@codeListValue": "instrument",
+              "@codeList": "http://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode",
+              "_$": "instrument"
+            }},
+            "gmd:thesaurusName": {"gmd:CI_Citation": {
+              "gmd:title": {"gco:CharacterString": {"_$": "MGDS Device vocabulary"}},
+              "gmd:date": {"@gco:nilReason": "unknown"},
+              "gmd:identifier": [
+                {"gmd:MD_Identifier": {"gmd:code": {"gco:CharacterString": {"_$": "http://www.marine-geo.org/services/VocabServer?id=device_make_model_map&fmt=xml"}}}},
+                {"gmd:MD_Identifier": {"gmd:code": {"gco:CharacterString": {"_$": "http://www.marine-geo.org/services/VocabServer?id=data_type&fmt=xml"}}}}
+              ]
+            }}
+          }},
+          {"gmd:MD_Keywords": {"gmd:keyword": [
+            {"gco:CharacterString": {"_$": "MGDS"}},
+            {"gco:CharacterString": {"_$": "EN370"}}
+          ]}},
+          {"gmd:MD_Keywords": {
+            "gmd:keyword": {"gco:CharacterString": {"_$": "Long Island Shelf"}},
+            "gmd:type": {"gmd:MD_KeywordTypeCode": {
+              "@codeListValue": "place",
+              "@codeList": "http://www.ngdc.noaa.gov/metadata/published/xsd/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode",
+              "_$": "place"
+            }}
+          }}
+        ],
+        "gmd:language": {"gco:CharacterString": {"_$": "eng"}},
+        "gmd:topicCategory": {"gmd:MD_TopicCategoryCode": {"_$": "oceans"}},
+        "gmd:extent": [
+          {"gmd:EX_Extent": {"gmd:geographicElement": {"gmd:EX_GeographicBoundingBox": {
+            "gmd:westBoundLongitude": {"gco:Decimal": {"_$": "-74.076827"}},
+            "gmd:eastBoundLongitude": {"gco:Decimal": {"_$": "-72.022135"}},
+            "gmd:southBoundLatitude": {"gco:Decimal": {"_$": "39.150877"}},
+            "gmd:northBoundLatitude": {"gco:Decimal": {"_$": "40.596252"}}
+          }}}},
+          {"gmd:EX_Extent": {"gmd:temporalElement": {"gmd:EX_TemporalExtent": {"gmd:extent": {"gml:TimePeriod": {
+            "@gml:id": "Temporal",
+            "gml:beginPosition": {"_$": "2002-05-23"},
+            "gml:endPosition": {"_$": "2002-05-29"}
+          }}}}}}
+        ]
+      }},
+      "gmd:distributionInfo": {"gmd:MD_Distribution": {
+        "gmd:distributionFormat": {"gmd:MD_Format": {
+          "gmd:name": {"gco:CharacterString": {"_$": "ASCII"}},
+          "gmd:version": {"gco:CharacterString": {"_$": "1"}}
+        }},
+        "gmd:distributor": {"gmd:MD_Distributor": {"gmd:distributorContact": {"gmd:CI_ResponsibleParty": {
+          "gmd:individualName": {"gco:CharacterString": {"_$": "MGDS Data Manager"}},
+          "gmd:organisationName": {"gco:CharacterString": {"_$": "Interdisciplinary Earth Data Alliance (IEDA):Marine Geoscience Data System (MGDS)"}},
+          "gmd:contactInfo": {"gmd:CI_Contact": {"gmd:address": {"gmd:CI_Address": {"gmd:electronicMailAddress": {"gco:CharacterString": {"_$": "info@marine-geo.org"}}}}}},
+          "gmd:role": {"gmd:CI_RoleCode": {
+            "@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode",
+            "@codeListValue": "pointofContact",
+            "_$": "pointOfContact"
+          }}
+        }}}},
+        "gmd:transferOptions": {"gmd:MD_DigitalTransferOptions": {"gmd:onLine": {"gmd:CI_OnlineResource": {
+          "gmd:linkage": {"gmd:URL": {"_$": "http://www.marine-geo.org/tools/datasets/10000"}},
+          "gmd:protocol": {"gco:CharacterString": {"_$": "http"}},
+          "gmd:name": {"gco:CharacterString": {"_$": "link to landing page for resource"}},
+          "gmd:description": {"gco:CharacterString": {"_$": "Link to landing page for Seismic Shot Point Navigation Data from the Long Island Shelf acquired during the R/V Endeavor expedition EN370 (2002)"}}
+        }}}}
+      }},
+      "gmd:dataQualityInfo": {"gmd:DQ_DataQuality": {"gmd:scope": {"gmd:DQ_Scope": {"gmd:level": {"gmd:MD_ScopeCode": {
+        "@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode",
+        "@codeListValue": "series",
+        "_$": "series"
+      }}}}}}
+    },
+    "_@gmi": "http://www.isotc211.org/2005/gmi",
+    "_@default": "http://www.isotc211.org/2005/gmi",
+    "_@gco": "http://www.isotc211.org/2005/gco",
+    "_@gmd": "http://www.isotc211.org/2005/gmd",
+    "_@gml": "http://www.opengis.net/gml/3.2",
+    "_@gmx": "http://www.isotc211.org/2005/gmx",
+    "_@gsr": "http://www.isotc211.org/2005/gsr",
+    "_@gss": "http://www.isotc211.org/2005/gss",
+    "_@gts": "http://www.isotc211.org/2005/gts",
+    "_@srv": "http://www.isotc211.org/2005/srv",
+    "_@xlink": "http://www.w3.org/1999/xlink",
+    "_@xml": "http://www.w3.org/XML/1998/namespace",
+    "_@xsi": "http://www.w3.org/2001/XMLSchema-instance"
+  },
+  "SourceInfo": {
+    "SourceID": "cinergi-0023",
+    "ViewID": "",
+    "Name": "IEDA",
+    "DataSource": "IEDA"
+  },
+  "Data": {
+    "spatial": {
+      "bounding_boxes": [{
+        "southwest": {
+          "lat": 39.150877,
+          "lng": -74.076827
+        },
+        "northeast": {
+          "lat": 40.596252,
+          "lng": -72.022135
+        }
+      }],
+      "place_keywords": ["Long Island Shelf"],
+      "text": "Seismic Shot Point Navigation Data from the Long Island Shelf acquired during the R/V Endeavor expedition EN370 (2002) \nThis data set was acquired with the LDEO Portable HiRes Multi-Channel Seismic system during Endeavor expedition R/V EN370 conducted in 2002 (Chief Scientist: Dr. Gregory Mountain; Investigators: Dr. Gregory Mountain, Dr. Cecilia McHugh, and Dr. Nicholas Christie-Blick). These data files are of ASCII format and include Seismic Shot Point Navigation data that provide the primary seismic navigation source for this cruise. Data were acquired as part of the project: Hi-Res MCS, CHIRP and side-scan sonar study of NY/NJ margins, and funding was provided by NSF grants: OCE01-19019 and OCE02-24767. These data are cited by McHugh et al., 2010. \n",
+      "invalid_place_keywords": [],
+      "derived_bounding_boxes_from_places": {},
+      "derived_place_from_text": [],
+      "derived_bounding_boxes_from_derived_place": {}
+    },
+    "keywords": [
+      {
+        "term": "Mountain",
+        "ontId": "http://purl.obolibrary.org/obo/ENVO_00000191",
+        "fullHierarchy": "Feature > Physiographic Feature > Elevation > Mount > Mountain",
+        "facetHierarchy": "Feature > Physiographic Feature",
+        "entityInfos": [{
+          "id": "http://purl.obolibrary.org/obo/ENVO_00000191",
+          "start": -1,
+          "end": -1,
+          "category": "Feature > Physiographic Feature"
+        }]
+      },
+      {
+        "term": "Expedition",
+        "ontId": "http://purl.bioontology.org/ontology/MESH/D006802",
+        "fullHierarchy": "Thing > Activity > Planned Process > Expedition",
+        "facetHierarchy": "Thing > Activity",
+        "entityInfos": [{
+          "id": "http://purl.bioontology.org/ontology/MESH/D006802",
+          "start": -1,
+          "end": -1,
+          "category": "Thing > Activity"
+        }]
+      },
+      {
+        "term": "Sonar",
+        "ontId": "http://sweet.jpl.nasa.gov/2.3/matrEquipment.owl#Equipment",
+        "fullHierarchy": "Thing > Equipment > Instruments > In Situ/Laboratory Instruments > Profilers/Sounders > Acoustic Sounders > Sound Navigation and Ranging",
+        "facetHierarchy": "Thing > Equipment",
+        "entityInfos": [{
+          "id": "http://sweet.jpl.nasa.gov/2.3/matrEquipment.owl#Equipment",
+          "start": -1,
+          "end": -1,
+          "category": "Thing > Equipment"
+        }]
+      },
+      {
+        "term": "OBSERVATORY",
+        "ontId": "http://gcmdservices.gsfc.nasa.gov/kms/concept/f3261de5-34c1-4980-af22-f9d7e7206d12",
+        "fullHierarchy": "Equipment > platform > In Situ Land-based Platforms > OBSERVATORIES",
+        "facetHierarchy": "Equipment > platform",
+        "entityInfos": [{
+          "id": "http://gcmdservices.gsfc.nasa.gov/kms/concept/f3261de5-34c1-4980-af22-f9d7e7206d12",
+          "start": -1,
+          "end": -1,
+          "category": "Equipment > platform"
+        }]
+      },
+      {
+        "term": "Shelf",
+        "ontId": "http://sweet.jpl.nasa.gov/2.3/realm.owl#Realm",
+        "fullHierarchy": "Thing > Feature > Shelf",
+        "facetHierarchy": "Thing > Feature",
+        "entityInfos": [{
+          "id": "http://sweet.jpl.nasa.gov/2.3/realm.owl#Realm",
+          "start": -1,
+          "end": -1,
+          "category": "Thing > Feature"
+        }]
+      },
+      {
+        "term": "Island",
+        "ontId": "http://sweet.jpl.nasa.gov/2.3/realmHydro.owl#HydrosphereFeature",
+        "fullHierarchy": "Feature > Hydrologic Feature > Island",
+        "facetHierarchy": "Feature > Hydrologic Feature",
+        "entityInfos": [{
+          "id": "http://sweet.jpl.nasa.gov/2.3/realmHydro.owl#HydrosphereFeature",
+          "start": -1,
+          "end": -1,
+          "category": "Feature > Hydrologic Feature"
+        }]
+      },
+      {
+        "term": "NSF",
+        "ontId": "http://purl.obolibrary.org/obo/OBI_0000245",
+        "fullHierarchy": "Thing > Organization > GOVERNMENT AGENCIES-U.S. FEDERAL AGENCIES > National Science Foundation",
+        "facetHierarchy": "Thing > Organization",
+        "entityInfos": [{
+          "id": "http://purl.obolibrary.org/obo/OBI_0000245",
+          "start": -1,
+          "end": -1,
+          "category": "Thing > Organization"
+        }]
+      },
+      {
+        "term": "EARTH",
+        "ontId": "http://sweet.jpl.nasa.gov/2.3/realm.owl#PlanetaryRealm",
+        "fullHierarchy": "Thing > Realm > Planetary Structure > Planet > Earth",
+        "facetHierarchy": "Thing > Realm",
+        "entityInfos": [{
+          "id": "http://sweet.jpl.nasa.gov/2.3/realm.owl#PlanetaryRealm",
+          "start": -1,
+          "end": -1,
+          "category": "Thing > Realm"
+        }]
+      }
+    ],
+    "enhancedKeywords": [
+      {
+        "id": "http://purl.obolibrary.org/obo/ENVO_00000191",
+        "term": "Mountain",
+        "category": "Feature > Physiographic Feature",
+        "hierarchyPath": "Feature > Physiographic Feature > Elevation > Mount > Mountain",
+        "type": "Keyword",
+        "lastChangedDate": "2016-06-16T13:31:41Z"
+      },
+      {
+        "id": "http://viaf.org/viaf/155060936/",
+        "term": "Lamont-Doherty Earth Observatory",
+        "category": "Organization > Institution",
+        "type": "Organization",
+        "lastChangedDate": "2016-06-16T13:31:41Z"
+      },
+      {
+        "id": "http://purl.bioontology.org/ontology/MESH/D006802",
+        "term": "Expedition",
+        "category": "Thing > Activity",
+        "hierarchyPath": "Thing > Activity > Planned Process > Expedition",
+        "type": "Keyword",
+        "lastChangedDate": "2016-06-16T13:31:41Z"
+      },
+      {
+        "id": "http://sweet.jpl.nasa.gov/2.3/matrEquipment.owl#Equipment",
+        "term": "Sonar",
+        "category": "Thing > Equipment",
+        "hierarchyPath": "Thing > Equipment > Instruments > In Situ/Laboratory Instruments > Profilers/Sounders > Acoustic Sounders > Sound Navigation and Ranging",
+        "type": "Keyword",
+        "lastChangedDate": "2016-06-16T13:31:41Z"
+      },
+      {
+        "id": "http://gcmdservices.gsfc.nasa.gov/kms/concept/f3261de5-34c1-4980-af22-f9d7e7206d12",
+        "term": "OBSERVATORY",
+        "category": "Equipment > platform",
+        "hierarchyPath": "Equipment > platform > In Situ Land-based Platforms > OBSERVATORIES",
+        "type": "Keyword",
+        "lastChangedDate": "2016-06-16T13:31:41Z"
+      },
+      {
+        "id": "http://sweet.jpl.nasa.gov/2.3/realm.owl#Realm",
+        "term": "Shelf",
+        "category": "Thing > Feature",
+        "hierarchyPath": "Thing > Feature > Shelf",
+        "type": "Keyword",
+        "lastChangedDate": "2016-06-16T13:31:41Z"
+      },
+      {
+        "id": "http://sweet.jpl.nasa.gov/2.3/realmHydro.owl#HydrosphereFeature",
+        "term": "Island",
+        "category": "Feature > Hydrologic Feature",
+        "hierarchyPath": "Feature > Hydrologic Feature > Island",
+        "type": "Keyword",
+        "lastChangedDate": "2016-06-16T13:31:41Z"
+      },
+      {
+        "id": "http://purl.obolibrary.org/obo/OBI_0000245",
+        "term": "NSF",
+        "category": "Thing > Organization",
+        "hierarchyPath": "Thing > Organization > GOVERNMENT AGENCIES-U.S. FEDERAL AGENCIES > National Science Foundation",
+        "type": "Keyword",
+        "lastChangedDate": "2016-06-16T13:31:41Z"
+      },
+      {
+        "id": "http://sweet.jpl.nasa.gov/2.3/realm.owl#PlanetaryRealm",
+        "term": "EARTH",
+        "category": "Thing > Realm",
+        "hierarchyPath": "Thing > Realm > Planetary Structure > Planet > Earth",
+        "type": "Keyword",
+        "lastChangedDate": "2016-06-16T13:31:41Z"
+      }
+    ]
+  },
+  "Processing": {
+    "status": "finished",
+    "docId": "adb1ae01-d537-41de-a811-e6f80d589f65"
+  },
+  "History": {
+    "batchId": "06162016-13:31",
+    "prov": {
+      "curVersion": "1.4",
+      "lastProcessedDate": "2016-06-16T13:31:41.346-07:00",
+      "events": [
+        {
+          "wasGeneratedBy": {"_:wGB61": {
+            "prov:activity": "foundry:ac_1",
+            "prov:entity": "foundry:en_2"
+          }},
+          "entity": {
+            "foundry:en_1": {
+              "foundry:label": {
+                "type": "xsd:string",
+                "_$": "IEDA:org.marine-geo:metadata:10000"
+              },
+              "foundry:creationTime": {
+                "type": "xsd:string",
+                "_$": "2016-06-16T13:31:35-07:00"
+              },
+              "foundry:version": {
+                "type": "xsd:string",
+                "_$": "1.0"
+              },
+              "foundry:sourceId": {
+                "type": "xsd:string",
+                "_$": "cinergi-0023"
+              },
+              "foundry:UUID": {
+                "type": "xsd:string",
+                "_$": "5ba6c492-ec5a-4310-9758-20ec58725592"
+              }
+            },
+            "foundry:en_2": {
+              "foundry:label": {
+                "type": "xsd:string",
+                "_$": "IEDA:org.marine-geo:metadata:10000"
+              },
+              "foundry:creationTime": {
+                "type": "xsd:string",
+                "_$": "2016-06-16T13:31:35-07:00"
+              },
+              "foundry:version": {
+                "type": "xsd:string",
+                "_$": "1.1"
+              },
+              "foundry:UUID": {
+                "type": "xsd:string",
+                "_$": "org.marine-geo:metadata:10000"
+              }
+            }
+          },
+          "prefix": {
+            "xsd": "http://www.w3.org/2001/XMLSchema",
+            "prov": "http://www.w3.org/ns/prov#",
+            "foundry": "http://example.org"
+          },
+          "used": {"_:u61": {
+            "prov:activity": "foundry:ac_1",
+            "prov:entity": "foundry:en_1"
+          }},
+          "activity": {"foundry:ac_1": {
+            "prov:type": {
+              "type": "xsd:string",
+              "_$": "ingestion"
+            },
+            "prov:startTime": "2016-06-16T13:31:35-07:00",
+            "prov:endTime": "2016-06-16T13:31:35-07:00",
+            "prov:how": {
+              "type": "xsd:string",
+              "_$": "Added document with uuid org.marine-geo:metadata:10000"
+            }
+          }}
+        },
+        {
+          "wasGeneratedBy": {"_:wGB72": {
+            "prov:activity": "foundry:ac_1",
+            "prov:entity": "foundry:en_2"
+          }},
+          "entity": {
+            "foundry:en_1": {
+              "foundry:label": {
+                "_$": "IEDA:org.marine-geo:metadata:10000",
+                "type": "xsd:string"
+              },
+              "foundry:creationTime": {
+                "_$": "2016-06-16T13:31:35-07:00",
+                "type": "xsd:string"
+              },
+              "foundry:version": {
+                "_$": "1.1",
+                "type": "xsd:string"
+              },
+              "foundry:sourceId": {
+                "_$": "cinergi-0023",
+                "type": "xsd:string"
+              },
+              "foundry:UUID": {
+                "_$": "org.marine-geo:metadata:10000",
+                "type": "xsd:string"
+              }
+            },
+            "foundry:en_2": {
+              "foundry:label": {
+                "_$": "IEDA:org.marine-geo:metadata:10000",
+                "type": "xsd:string"
+              },
+              "foundry:creationTime": {
+                "_$": "2016-06-16T13:31:36-07:00",
+                "type": "xsd:string"
+              },
+              "foundry:version": {
+                "_$": "1.2",
+                "type": "xsd:string"
+              },
+              "foundry:UUID": {
+                "_$": "org.marine-geo:metadata:10000",
+                "type": "xsd:string"
+              }
+            }
+          },
+          "prefix": {
+            "xsd": "http://www.w3.org/2001/XMLSchema",
+            "prov": "http://www.w3.org/ns/prov#",
+            "foundry": "http://example.org"
+          },
+          "wasDerivedFrom": {"_:wDF41": {
+            "prov:activity": "foundry:ac_1",
+            "prov:generatedEntity": "foundry:en_2",
+            "prov:usedEntity": "foundry:en_1"
+          }},
+          "used": {"_:u72": {
+            "prov:activity": "foundry:ac_1",
+            "prov:entity": "foundry:en_1"
+          }},
+          "activity": {"foundry:ac_1": {
+            "prov:type": {
+              "_$": "spatialEnhancer",
+              "type": "xsd:string"
+            },
+            "prov:startTime": "2016-06-16T13:31:36-07:00",
+            "prov:endTime": "2016-06-16T13:31:36-07:00",
+            "prov:how": {
+              "_$": "No bounding box is added..",
+              "type": "xsd:string"
+            }
+          }}
+        },
+        {
+          "wasGeneratedBy": {"_:wGB78": {
+            "prov:activity": "foundry:ac_1",
+            "prov:entity": "foundry:en_2"
+          }},
+          "entity": {
+            "foundry:en_1": {
+              "foundry:label": {
+                "_$": "IEDA:org.marine-geo:metadata:10000",
+                "type": "xsd:string"
+              },
+              "foundry:creationTime": {
+                "_$": "2016-06-16T13:31:36-07:00",
+                "type": "xsd:string"
+              },
+              "foundry:version": {
+                "_$": "1.2",
+                "type": "xsd:string"
+              },
+              "foundry:sourceId": {
+                "_$": "cinergi-0023",
+                "type": "xsd:string"
+              },
+              "foundry:UUID": {
+                "_$": "org.marine-geo:metadata:10000",
+                "type": "xsd:string"
+              }
+            },
+            "foundry:en_2": {
+              "foundry:label": {
+                "_$": "IEDA:org.marine-geo:metadata:10000",
+                "type": "xsd:string"
+              },
+              "foundry:creationTime": {
+                "_$": "2016-06-16T13:31:37-07:00",
+                "type": "xsd:string"
+              },
+              "foundry:version": {
+                "_$": "1.3",
+                "type": "xsd:string"
+              },
+              "foundry:UUID": {
+                "_$": "org.marine-geo:metadata:10000",
+                "type": "xsd:string"
+              }
+            }
+          },
+          "prefix": {
+            "xsd": "http://www.w3.org/2001/XMLSchema",
+            "prov": "http://www.w3.org/ns/prov#",
+            "foundry": "http://example.org"
+          },
+          "wasDerivedFrom": {"_:wDF42": {
+            "prov:activity": "foundry:ac_1",
+            "prov:generatedEntity": "foundry:en_2",
+            "prov:usedEntity": "foundry:en_1"
+          }},
+          "used": {"_:u78": {
+            "prov:activity": "foundry:ac_1",
+            "prov:entity": "foundry:en_1"
+          }},
+          "activity": {"foundry:ac_1": {
+            "prov:type": {
+              "_$": "keywordEnhancer",
+              "type": "xsd:string"
+            },
+            "prov:startTime": "2016-06-16T13:31:37-07:00",
+            "prov:endTime": "2016-06-16T13:31:37-07:00",
+            "prov:how": {
+              "_$": "Added keywords Mountain for category Feature > Physiographic Feature. Added keywords Expedition for category Thing > Activity. Added keywords Sonar for category Thing > Equipment. Added keywords OBSERVATORY for category Equipment > platform. Added keywords Shelf for category Thing > Feature. Added keywords Island for category Feature > Hydrologic Feature. Added keywords NSF for category Thing > Organization. Added keywords EARTH for category Thing > Realm.",
+              "type": "xsd:string"
+            }
+          }}
+        }
+      ]
+    }
+  }
+}
