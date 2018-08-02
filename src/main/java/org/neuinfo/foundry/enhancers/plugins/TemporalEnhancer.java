@@ -16,7 +16,7 @@ import org.neuinfo.foundry.enhancers.common.EnhancerUtils;
 import java.util.*;
 
 /**
- * Created by valentine 2018-01-09.
+ * Created by valentine
  */
 public class TemporalEnhancer implements IPlugin {
     private TemporalNLP temporalNLP;
@@ -109,10 +109,5 @@ public class TemporalEnhancer implements IPlugin {
         return "temporalEnhancer";
     }
 
-    public class TemporalDate {
-        String start ;
-        String end;
-        String type;
-        String name;
-    }
+
 }

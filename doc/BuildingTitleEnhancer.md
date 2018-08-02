@@ -75,7 +75,12 @@ public class TitleEnhancer implements IPlugin {
     private int minTitleLength = 20;
 
     private final static Logger logger = Logger.getLogger(TitleEnhancer.class);
-    }
+    public static String loadAsStringFromClassPath(String classpath) throws Exception {
+            URL url = TitleEnhancerTest.class.getClassLoader().getResource(classpath);
+            String path = url.toURI().getPath();
+            return Utils.loadAsString(path);
+        }
+}
 ```   
 
 * Add modified test:

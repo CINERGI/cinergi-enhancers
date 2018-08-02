@@ -84,10 +84,79 @@ $..'gmd:abstract'.'gco:CharacterString'.'_$'
     
 ```   
 
-# setup tests
+# Step 1. setup tests
+
+``` java
+package org.neuinfo.foundry.enhancers;
+
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
+import org.json.JSONObject;
+import org.json.JSONArray;
+import org.junit.Assert;
+import org.junit.Test;
+import org.neuinfo.foundry.common.util.JSONUtils;
+import org.neuinfo.foundry.common.util.Utils;
+import org.neuinfo.foundry.consumers.plugin.IPlugin;
+import org.neuinfo.foundry.consumers.plugin.Result;
+import org.neuinfo.foundry.enhancers.plugins.TemporalEnhancer;
+
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+
+//import static org.junit.jupiter.api.Assertions.assertNotNull;
+//import static org.junit.jupiter.api.Assertions.assertTrue;
+
+// YOUR ENHANCER
 
 
 
+/**
+ * Created by valentine 12-2017.
+ */
+//@DisplayName("TemporalNLP Enhancer. Dates from Text")
+public class TemporalNLPEnhancerTest {
+
+    @Test
+    public void testTemporalEnhancer() throws Exception {
+        // load the test document wrapper from classpath (resources/test_data)
+        String jsonStr = loadAsStringFromClassPath("test_data/test_doc_temporal.json");
+        JSONObject json = new JSONObject(jsonStr);
+        DBObject docWrapper = JSONUtils.encode(json);
+        // create the plugin
+        IPlugin plugin = new TemporalEnhancer();
+        Map<String, String> options = new HashMap<String, String>(7);
+        plugin.initialize(options);
+
+        Result result = plugin.handle(docWrapper);
+
+        Assert.assertNotNull(result);
+        Assert.assertTrue(result.getStatus() == Result.Status.OK_WITH_CHANGE);
+
+
+
+        // show the updated doc wrapper
+        JSONObject updatedJson = JSONUtils.toJSON((BasicDBObject) result.getDocWrapper(), false);
+        JSONObject data = updatedJson.getJSONObject("Data");
+        JSONArray temporal = data.getJSONArray("temporalNLP");
+
+        System.out.println(updatedJson.toString(2));
+
+    }
+
+    public static String loadAsStringFromClassPath(String classpath) throws Exception {
+        URL url = TemporalNLPEnhancerTest.class.getClassLoader().getResource(classpath);
+        String path = url.toURI().getPath();
+        return Utils.loadAsString(path);
+    }
+}
+``` 
+
+
+ 
+ 
+# Step 2:
 
 #Create a Temporal Class:
 For the temporal class that will be serialized in the provenance, we the following fields are generated out of the 
@@ -108,3 +177,98 @@ public class Temporal {
     private int offsetStart=-1;
     private int offsetEnd=-1;
  ```        
+See code at: [Temporal.java](../src/main/java/org/neuinfo/foundry/enhancers/common/Temporal.java)
+
+# Step 3: create a temporalNLP class:
+We create a class to separate the enhancer from the NLP code. This will let us test the NLP code withtout
+having to run the full enhancer.
+
+See code at: [TemporalNLP.java](../src/main/java/org/neuinfo/foundry/enhancers/common/TemporalNLP.java)
+
+This method is the core, it reads a string and returns a structure that we will convert into information 
+that we will use to populate the temporal objects.
+There are three time types to be identified:
+* DURATION
+* DATE
+* TIME
+and a fourth type, UNKNOWN.
+
+
+```java
+     public   List<Temporal> getDates(String txt){
+        List<Temporal> temporalList = new ArrayList<Temporal>();;
+
+        List<CoreMap> timexAnnsAll = getdates( txt);
+
+        for (CoreMap cm : timexAnnsAll) {
+            Temporal t = new Temporal();
+
+            List<CoreLabel> tokens = cm.get(CoreAnnotations.TokensAnnotation.class);
+            t.setName(cm.get(TimeExpression.Annotation.class).getText());
+            t.setIsoString(cm.get(TimeExpression.Annotation.class).getTemporal().toISOString());
+            SUTime.Time timeSu = cm.get(TimeExpression.Annotation.class).getTemporal().getTime();
+
+            String type = cm.get(TimeExpression.Annotation.class).getTemporal().getTimexType().toString();
+t.setOffsetStart(tokens.get(0).get(CoreAnnotations.CharacterOffsetBeginAnnotation.class));
+t.setOffsetEnd(tokens.get(tokens.size() - 1).get(CoreAnnotations.CharacterOffsetEndAnnotation.class));
+            switch (type){
+                case "DURATION":
+                  SUTime.Range rng = cm.get(TimeExpression.Annotation.class).getTemporal().getRange();
+                    //t.setStartDate(timeSu.toISOString());
+                    t.setStartDate(rng.begin().toISOString());
+                    t.setEndDate(rng.end().toISOString());
+                    t.setDuration(rng.getDuration().toISOString());
+                    // case
+                    t.setDateType(dateType.DURATION);
+                 break;
+                case "DATE":
+
+                    t.setStartDate(timeSu.toISOString());
+
+                    // case
+                    t.setDateType(dateType.TimeInstant);
+                    break;
+                case "TIME":
+                    t.setStartDate(timeSu.toISOString());
+                    t.setDateType(dateType.TimeInstant);
+                    t.setName(timeSu.toISOString()); // label just shows time, and no date
+                    break;
+                default:
+                    t.setStartDate(timeSu.toISOString());
+                    t.setDateType(dateType.UNKNOWN);
+                    break;
+            }
+
+
+           // t.setStartDate(cm.get(TimeExpression.Annotation.class).getTemporal().getTime().getJodaTimeInstant() );
+            temporalList.add(t);
+            //t.setStartDate(cm.);
+            System.out.println(cm + " [from char offset " +
+                    tokens.get(0).get(CoreAnnotations.CharacterOffsetBeginAnnotation.class) +
+                    " to " + tokens.get(tokens.size() - 1).get(CoreAnnotations.CharacterOffsetEndAnnotation.class) + ']' +
+                    " --> " + cm.get(TimeExpression.Annotation.class).getTemporal());
+        }
+        System.out.println("--");
+        //  }
+    
+        return temporalList;
+    }
+```
+    
+# step 4: create a test class for In order to test the Stanford NLP code, we wrote a test class, and we put it in tests/org.neuinfo/foundry.enhancers/common
+
+This is a class where we can easily add text examples, and the results.
+See code at: [TemporalNLPTest.java](../src/test/java/org/neuinfo/foundry/enhancers/common/TemporalNLPTest.java)
+
+# Step 5. Write enhancer test.
+Previous code provided a basis for writing an enhancer. 
+This code is the enhancer, so we write a basic test just to make sure that the changed code returns
+since we test the strings in TemporalNLPTest.java
+
+
+See code at: [TemporalTest.java](../src/test/java/org/neuinfo/foundry/enhancers/TemporalTest.java)
+
+                                
+Step 6. Write Enhancer:
+                                
+                                  
