@@ -84,82 +84,13 @@ $..'gmd:abstract'.'gco:CharacterString'.'_$'
     
 ```   
 
-# Step 1. setup tests
-
-``` java
-package org.neuinfo.foundry.enhancers;
-
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
-import org.json.JSONObject;
-import org.json.JSONArray;
-import org.junit.Assert;
-import org.junit.Test;
-import org.neuinfo.foundry.common.util.JSONUtils;
-import org.neuinfo.foundry.common.util.Utils;
-import org.neuinfo.foundry.consumers.plugin.IPlugin;
-import org.neuinfo.foundry.consumers.plugin.Result;
-import org.neuinfo.foundry.enhancers.plugins.TemporalEnhancer;
-
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-
-//import static org.junit.jupiter.api.Assertions.assertNotNull;
-//import static org.junit.jupiter.api.Assertions.assertTrue;
-
-// YOUR ENHANCER
 
 
-
-/**
- * Created by valentine 12-2017.
- */
-//@DisplayName("TemporalNLP Enhancer. Dates from Text")
-public class TemporalNLPEnhancerTest {
-
-    @Test
-    public void testTemporalEnhancer() throws Exception {
-        // load the test document wrapper from classpath (resources/test_data)
-        String jsonStr = loadAsStringFromClassPath("test_data/test_doc_temporal.json");
-        JSONObject json = new JSONObject(jsonStr);
-        DBObject docWrapper = JSONUtils.encode(json);
-        // create the plugin
-        IPlugin plugin = new TemporalEnhancer();
-        Map<String, String> options = new HashMap<String, String>(7);
-        plugin.initialize(options);
-
-        Result result = plugin.handle(docWrapper);
-
-        Assert.assertNotNull(result);
-        Assert.assertTrue(result.getStatus() == Result.Status.OK_WITH_CHANGE);
-
-
-
-        // show the updated doc wrapper
-        JSONObject updatedJson = JSONUtils.toJSON((BasicDBObject) result.getDocWrapper(), false);
-        JSONObject data = updatedJson.getJSONObject("Data");
-        JSONArray temporal = data.getJSONArray("temporalNLP");
-
-        System.out.println(updatedJson.toString(2));
-
-    }
-
-    public static String loadAsStringFromClassPath(String classpath) throws Exception {
-        URL url = TemporalNLPEnhancerTest.class.getClassLoader().getResource(classpath);
-        String path = url.toURI().getPath();
-        return Utils.loadAsString(path);
-    }
-}
-``` 
-
-
- 
- 
-# Step 2:
+# Step 1:
 
 #Create a Temporal Class:
-For the temporal class that will be serialized in the provenance, we the following fields are generated out of the 
+For the temporal class that will be passed between NLP code and the enhancer, and to be
+serialized in the provenance, we the following fields are generated out of the 
 temporalNLP call
 
  ```java
@@ -179,7 +110,7 @@ public class Temporal {
  ```        
 See code at: [Temporal.java](../src/main/java/org/neuinfo/foundry/enhancers/common/Temporal.java)
 
-# Step 3: create a temporalNLP class:
+# Step 1: create a temporalNLP class:
 We create a class to separate the enhancer from the NLP code. This will let us test the NLP code withtout
 having to run the full enhancer.
 
